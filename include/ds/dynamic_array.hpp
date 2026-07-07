@@ -80,4 +80,11 @@ public:
             arrSize++;
         }
     }
+
+    void pop_back (){
+        if (data==nullptr) throw std::out_of_range("data is NULL"); 
+        else if (arrSize == 0) throw std::out_of_range("data id empty");
+        else arrSize--;
+    }
+    
 }
