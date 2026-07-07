@@ -31,4 +31,15 @@ public:
     ~DynamicArray(){
         delete[] data;
     }
+
+    //Features of dynamic array
+
+    //push-back
+    //It has to push at the end of the array a value
+    //if the array is full we have to expand it
+    //or we have to insert the value at the end of the array and increment by 1 the array size
+
+    void push_back (T value){
+        
+    }
 }
