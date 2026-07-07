@@ -110,5 +110,8 @@ public:
         }
     }
 
+    unsigned int size() const{
+        return arrSize;
+    }
     
 }
