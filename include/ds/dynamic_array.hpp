@@ -96,5 +96,10 @@ public:
         }
     }
 
-    
+    T at(unsigned int pos) const{
+        if (pos>=arrSize) throw std::out_of_range("index > Size");
+        else {
+            return data[pos];
+        }
+    }
 }
