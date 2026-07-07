@@ -16,7 +16,7 @@ remove(i) delete a value in a index position    READY
 at(i) returns a value in a index position   READY 
 set (i , value) set a value in a especific position     READY
 size() returns the size of the array    READY
-cap() returns the capacity of the array 
+cap() returns the capacity of the array     READY
 
 clear() empyts the array
 contains(value) returns a boolean if the value is in the array or not
@@ -116,5 +116,9 @@ public:
 
     unsigned int cap() const{
         return cap;
+    }
+
+    void clear(){
+        arrSize = 0;
     }
 }
