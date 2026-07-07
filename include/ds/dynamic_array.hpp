@@ -86,5 +86,15 @@ public:
         else if (arrSize == 0) throw std::out_of_range("data id empty");
         else arrSize--;
     }
+    void erase(unsigned int pos){
+        if (pos>=arrSize) throw std::out_of_range("index > Size");
+        else{
+            for (unsigned int i = pos; i < arrSize-1; ++i){
+                data[i]=data[i+1];
+            }
+                arrSize--;
+        }
+    }
+
     
 }
