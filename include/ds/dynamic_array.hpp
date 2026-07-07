@@ -13,8 +13,8 @@ insert(i, value) insert a value in a especific position shifting right the other
 pop_back() delete the last value in the array   READY  
 remove(i) delete a value in a index position    READY   
 
-get(i) returns a value in a index position 
-set (i , value) set a value in a especific position
+at(i) returns a value in a index position   READY 
+set (i , value) set a value in a especific position     READY
 size() returns the size of the array
 cap() returns the capacity of the array
 
@@ -102,4 +102,13 @@ public:
             return data[pos];
         }
     }
+
+    void set(unsigned int pos, T& value){
+        if (pos>=arrSize) throw std::out_of_range("index > Size");
+        else{
+            data[pos]=value;
+        }
+    }
+
+    
 }
