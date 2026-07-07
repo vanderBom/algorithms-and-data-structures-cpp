@@ -1,7 +1,29 @@
 #pragma once
 
 #include <iostream>
+#include <string>
+#include <stdexcept>
+/*
+It has to have...
+resize() resize the array   READY
 
+push_back(value) insert a value in the array     READY
+insert(i, value) insert a value in a especific position shifting right the other elements   READY
+
+pop_back() delete the last value in the array   READY  
+remove(i) delete a value in a index position    READY   
+
+get(i) returns a value in a index position 
+set (i , value) set a value in a especific position
+size() returns the size of the array
+cap() returns the capacity of the array
+
+clear() empyts the array
+contains(value) returns a boolean if the value is in the array or not
+intexOf(value) returns the index of a value position
+inEmpty() returns a boolean if the array is empty or not
+
+*/
 template <typename T>
 class DynamicArray {
 private:
@@ -32,12 +54,6 @@ public:
         delete[] data;
     }
 
-    //Features of dynamic array
-
-    //push-back
-    //It has to push at the end of the array a value
-    //if the array is full we have to expand it
-    //or we have to insert the value at the end of the array and increment by 1 the array size
 
     void push_back (T& value){
         if (data==nullptr){
@@ -47,5 +63,21 @@ public:
         }
         data[arrSize] = value;
         arrSize++;
+    }
+    void insert (unsigned int pos, T& value){
+        if (pos>arrSize){
+            throw std::out_of_range("Invalid operation: index > size");
+        }else{
+            if (data==nullptr){
+                resize (1);
+            }else if (cap == arrSize){
+                resize (cap*2);
+            }
+            for (int i = arrSize; i>pos; --i){
+                data[i]=data[i-1];
+            }
+            data[pos]=value;
+            arrSize++;
+        }
     }
 }
