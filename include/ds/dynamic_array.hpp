@@ -18,7 +18,7 @@ set (i , value) set a value in a especific position     READY
 size() returns the size of the array    READY
 cap() returns the capacity of the array     READY
 
-clear() empyts the array
+clear() empyts the array    READY
 contains(value) returns a boolean if the value is in the array or not
 intexOf(value) returns the index of a value position
 inEmpty() returns a boolean if the array is empty or not
@@ -118,7 +118,20 @@ public:
         return cap;
     }
 
-    void clear(){
+    void clear() const{
         arrSize = 0;
     }
+
+    bool contains(T& value) const{
+        if (arrSize==0) return false;
+        else {
+            for (unsigned int i=0; i<arrSize ; ++i){
+                if (data[i]==value){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    
 }
