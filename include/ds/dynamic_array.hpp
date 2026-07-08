@@ -43,6 +43,7 @@ private:
         cap = newcap;
     }
 public:
+
     //Constructor
     DynamicArray(){
         data = nullptr;
@@ -93,7 +94,7 @@ public:
     }
 
 
-    void push_back (T& value){
+    void push_back (const T& value){
         if (data==nullptr){
             resize (1);
         }else if (cap == arrSize){
@@ -102,7 +103,7 @@ public:
         data[arrSize] = value;
         arrSize++;
     }
-    void insert (unsigned int pos, T& value){
+    void insert (unsigned int pos, const T& value){
         if (pos>arrSize){
             throw std::out_of_range("Invalid operation: index > size");
         }else{
@@ -141,7 +142,7 @@ public:
         }
     }
 
-    void set(unsigned int pos, T& value){
+    void set(unsigned int pos, const T& value){
         if (pos>=arrSize) throw std::out_of_range("index > Size");
         else{
             data[pos]=value;
@@ -160,7 +161,7 @@ public:
         arrSize = 0;
     }
 
-    bool contains(T& value) const{
+    bool contains(const T& value) const{
         if (arrSize==0) return false;
         else {
             for (unsigned int i=0; i<arrSize ; ++i){
@@ -172,7 +173,7 @@ public:
         }
     }
 
-    int intex_of(const T& value) const{
+    int index_of(const T& value) const{
         if (arrSize==0) return -1;
         else{
             for (unsigned int i = 0 ; i<arrSize ; ++i){
