@@ -20,8 +20,8 @@ cap() returns the capacity of the array     READY
 
 clear() empyts the array    READY
 contains(value) returns a boolean if the value is in the array or not   READY   
-intexOf(value) returns the index of a value position    
-inEmpty() returns a boolean if the array is empty or not
+intexOf(value) returns the index of a value position       READY
+empty() returns a boolean if the array is empty or not    READY
 
 */
 template <typename T>
@@ -144,5 +144,8 @@ public:
         }
     }
 
-
+    bool empty()const{
+        if (arrSize==0) return true;
+        else return false;
+    }
 }
