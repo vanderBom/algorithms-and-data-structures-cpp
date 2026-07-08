@@ -134,7 +134,7 @@ public:
         }
     }
 
-    int intex_Of(const T& value) const{
+    int intex_of(const T& value) const{
         if (arrSize==0) return -1;
         else{
             for (unsigned int i = 0 ; i<arrSize ; ++i){
