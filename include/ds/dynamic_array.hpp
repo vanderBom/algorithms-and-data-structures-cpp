@@ -49,6 +49,44 @@ public:
         arrSize = 0;
         cap = 0;
     }
+    DynamicArray(const DynamicArray& other){
+        if (other.cap==0){
+            cap=0;
+            data=nullptr;
+            arrSize=0;
+        }else{
+            cap=other.cap;
+            arrSize=other.arrSize;
+            data = new T[cap];
+            for (unsigned int i = 0; i<arrSize ; ++i){
+                data[i]=other.data[i];
+            }
+        }
+    }
+    DynamicArray& operator=(const DynamicArray& other){
+        if (this == &other){
+            return *this;
+        }
+        if(other.cap==0){
+            T* newData=nullptr;
+            delete[] data; 
+            data = newData;
+            cap = other.cap;
+            arrSize = other.arrSize;
+            return *this;
+        }
+        T* newData = new T[other.cap];
+
+        for (unsigned int i = 0; i < other.arrSize ; i++){
+            newData[i] = other.data[i];
+        }
+
+        delete[] data; 
+        data = newData;
+        cap = other.cap;
+        arrSize = other.arrSize;
+        return *this;
+    }
     //Destructor
     ~DynamicArray(){
         delete[] data;
