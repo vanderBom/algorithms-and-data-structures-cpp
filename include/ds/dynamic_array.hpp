@@ -114,7 +114,7 @@ public:
         return arrSize;
     }
 
-    unsigned int cap() const{
+    unsigned int capacity() const{
         return cap;
     }
 
