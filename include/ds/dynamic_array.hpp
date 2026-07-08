@@ -19,8 +19,8 @@ size() returns the size of the array    READY
 cap() returns the capacity of the array     READY
 
 clear() empyts the array    READY
-contains(value) returns a boolean if the value is in the array or not
-intexOf(value) returns the index of a value position
+contains(value) returns a boolean if the value is in the array or not   READY   
+intexOf(value) returns the index of a value position    
 inEmpty() returns a boolean if the array is empty or not
 
 */
@@ -133,5 +133,16 @@ public:
             return false;
         }
     }
-    
+
+    int intex_Of(const T& value) const{
+        if (arrSize==0) return -1;
+        else{
+            for (unsigned int i = 0 ; i<arrSize ; ++i){
+                if (data[i]==value) return i;
+            }
+            return -1;
+        }
+    }
+
+
 }
