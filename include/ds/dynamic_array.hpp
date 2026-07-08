@@ -118,7 +118,7 @@ public:
         return cap;
     }
 
-    void clear() const{
+    void clear(){
         arrSize = 0;
     }
 
