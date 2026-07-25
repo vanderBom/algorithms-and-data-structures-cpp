@@ -169,9 +169,13 @@ public:
     }
 
     const T& back() const{
-        if (back==nullptr) throw std::out_of_range("Invalid operation: empty list");
+        if (tail==nullptr) throw std::out_of_range("Invalid operation: empty list");
         return *(tail->data);
     }
+
+    unsigned int size () const {
+        return listSize;
+    } 
 
     void print() const {
         Node* current = head;
