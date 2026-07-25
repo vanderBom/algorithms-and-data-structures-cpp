@@ -33,4 +33,18 @@ public:
             current = nextNode;
         }
     }
+    void push_front(const T& value){
+        Node* newNode = new Node;
+        newNode->data = new T(value);
+        if (head == nullptr){
+            head = newNode;
+            tail = newNode;
+            newNode->next=nullptr;
+            listSize++;
+        }else {
+            newNode->next = head;
+            head = newNode;
+            listSize++;
+        }
+    }
 };
