@@ -160,8 +160,15 @@ public:
         }
         delete current->data;
         current->data = new T(value);
-        
+
     }
+
+    const T& front() const {
+        if (head==nullptr) throw std::out_of_range("Invalid operation: empty list");
+        return *(head->data);
+    }
+
+    
 
     void print() const {
         Node* current = head;
