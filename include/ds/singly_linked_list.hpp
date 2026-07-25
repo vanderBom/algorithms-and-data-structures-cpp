@@ -18,5 +18,10 @@ private:
     Node* tail;
     unsigned int listSize;
 public:
-
+    SinglyLinkedList(){
+        head = nullptr;
+        tail = nullptr;
+        listSize = 0;
+    }
+    
 };
