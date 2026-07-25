@@ -47,6 +47,20 @@ public:
         listSize++;
     }
 
+    void push_back(const T& value){
+        Node* newNode = new Node;
+        newNode->data= new T(value);
+        newNode->next=nullptr;
+        if (head ==nullptr){
+            head = newNode;
+            tail=newNode;
+        }else{
+            tail->next=newNode;
+            tail=newNode;
+        }
+        listSize++;
+    }
+
     void print() const {
         Node* current = head;
         while (current != nullptr){
