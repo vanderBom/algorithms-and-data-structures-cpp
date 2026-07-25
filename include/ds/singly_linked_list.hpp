@@ -40,11 +40,18 @@ public:
             head = newNode;
             tail = newNode;
             newNode->next=nullptr;
-            listSize++;
-        }else {
+        } else {
             newNode->next = head;
             head = newNode;
-            listSize++;
+        }
+        listSize++;
+    }
+
+    void print() const {
+        Node* current = head;
+        while (current != nullptr){
+            std::cout << *(current->data) << '\n';
+            current = current->next;
         }
     }
 };
