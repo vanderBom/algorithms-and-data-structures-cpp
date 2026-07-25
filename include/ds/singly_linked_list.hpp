@@ -25,6 +25,18 @@ public:
         tail = nullptr;
         listSize = 0;
     }
+    SinglyLinkedList(const SinglyLinkedList& other){
+        head=nullptr;
+        tail=nullptr;
+        listSize=0;
+
+        Node* current = other.head;
+            
+        while (current != nullptr){
+            push_back(*(current->data));
+            current=current->next;
+        }
+    }
     ~SinglyLinkedList(){
         Node* current=head;
         Node* nextNode;
