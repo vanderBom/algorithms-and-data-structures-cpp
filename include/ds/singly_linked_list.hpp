@@ -108,7 +108,7 @@ public:
 
     void insert (unsigned int pos, const T& value){
 
-        if (pos> listSize) throw std::out_of_range("Invalid operation: index > listSize");
+        if (pos> listSize || pos < 0) throw std::out_of_range("Invalid operation: index > listSize or index < 0");
 
         if (pos == 0){push_front (value); return;}
 
@@ -123,6 +123,24 @@ public:
         newNode-> next = current->next;
         current->next = newNode;    
         listSize++;
+    }
+
+    void erase(unsigned int pos){
+        if (pos == listSize || pos < 0) throw std::out_of_range("Invalid operation: index > listSize or index < 0");
+
+        if (pos == 0){pop_front(); return;}
+
+        if (pos == listSize -1 ){pop_back(); return;}
+
+        Node* current = head;
+        for (unsigned int i = 0 ; i != pos -1 ; i++){
+            current = current->next;
+        }
+        Node* trash = current->next;
+        current->next=trash->next;
+        delete trash->data;
+        delete trash;
+        listSize--;
     }
 
     void print() const {
