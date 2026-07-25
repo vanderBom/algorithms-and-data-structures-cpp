@@ -206,6 +206,19 @@ public:
         return false;
     }
 
+    int index_of( const T& value ) const{
+
+        if (head == nullptr) return -1;
+        
+
+        Node* current = head;
+        for (unsigned int i = 0 ; i < listSize  ; i++) {
+            if (*(current->data)==value) return i;
+            current = current->next;
+        }
+        return -1;
+    }
+
     void print() const {
         Node* current = head;
         while (current != nullptr){
