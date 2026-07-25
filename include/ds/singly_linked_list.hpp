@@ -152,6 +152,17 @@ public:
         return *(current->data);
     }
 
+    void set (unsigned int pos, const T& value){
+        if (pos >= listSize) throw std::out_of_range("Invalid operation: index > listSize or index < 0");
+        Node* current = head;
+        for (int i = 0; i < pos  ; i++){
+            current = current->next;
+        }
+        delete current->data;
+        current->data = new T(value);
+        
+    }
+
     void print() const {
         Node* current = head;
         while (current != nullptr){
