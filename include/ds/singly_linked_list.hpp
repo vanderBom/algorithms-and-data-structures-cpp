@@ -177,6 +177,10 @@ public:
         return listSize;
     } 
 
+    bool empty() const{
+        if (listSize == 0) return true; else return false;
+    }
+
     void print() const {
         Node* current = head;
         while (current != nullptr){
