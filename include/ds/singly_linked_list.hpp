@@ -23,5 +23,14 @@ public:
         tail = nullptr;
         listSize = 0;
     }
-    
+    ~SinglyLinkedList(){
+        Node* current=head;
+        Node* nextNode;
+        while(current != nullptr){
+            nextNode = current->next;
+            delete current->data;
+            delete current;
+            current = nextNode;
+        }
+    }
 };
