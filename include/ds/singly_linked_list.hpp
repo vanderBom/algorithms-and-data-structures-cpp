@@ -197,6 +197,15 @@ public:
         listSize = 0;
     }
 
+    bool contains (const T& value) const{
+        Node* current = head;
+        while (current != nullptr){
+            if (*(current->data) == value) return true;
+            current= current->next;
+        }
+        return false;
+    }
+
     void print() const {
         Node* current = head;
         while (current != nullptr){
