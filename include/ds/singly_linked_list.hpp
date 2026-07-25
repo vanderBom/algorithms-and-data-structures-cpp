@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <string>
+#include <stdexcept>
 
 /*
 
@@ -58,6 +60,68 @@ public:
             tail->next=newNode;
             tail=newNode;
         }
+        listSize++;
+    }
+
+    void pop_front(){
+        if (head==nullptr){
+            throw std::out_of_range("Invalid operation: list is empty");
+        }
+
+        if (head == tail){
+            delete head->data;
+            delete head;
+            head = nullptr;
+            tail = nullptr;
+            listSize--;
+            return;
+        }
+        Node* current = head;
+        head = current->next;
+        delete current->data;
+        delete current;
+        listSize--;
+    }
+
+    void pop_back(){
+        if (head==nullptr) throw std::out_of_range("Invalid operation: list is empty");
+        
+        if (head==tail){
+            delete head->data;
+            delete head;
+            head = nullptr;
+            tail = nullptr;
+            listSize--;
+            return;
+        }
+
+        Node* current = head;
+        while (current->next != tail){
+            current = current->next;
+        }
+        delete tail->data;
+        delete tail;
+        tail = current;
+        tail->next = nullptr;
+        listSize--;
+    }
+
+    void insert (unsigned int pos, const T& value){
+
+        if (pos> listSize) throw std::out_of_range("Invalid operation: index > listSize");
+
+        if (pos == 0){push_front (value); return;}
+
+        if (pos == listSize ) {push_back (value); return;}
+
+        Node* current = head;
+        for (unsigned int i = 0 ; i != pos -1 ; i++){
+            current = current->next;
+        }
+        Node* newNode = new Node;
+        newNode->data = new T(value);
+        newNode-> next = current->next;
+        current->next = newNode;    
         listSize++;
     }
 
