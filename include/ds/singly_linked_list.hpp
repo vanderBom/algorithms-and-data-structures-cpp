@@ -181,6 +181,22 @@ public:
         if (listSize == 0) return true; else return false;
     }
 
+    void clear() {
+
+        if (listSize==0) throw std::out_of_range("Invalid operation: empty list");
+        Node* current = head;
+
+        while (current != nullptr){
+            Node* nextNode = current->next;
+            delete current->data;
+            delete current;
+            current = nextNode;
+        }
+        head =nullptr;
+        tail = nullptr;
+        listSize = 0;
+    }
+
     void print() const {
         Node* current = head;
         while (current != nullptr){
