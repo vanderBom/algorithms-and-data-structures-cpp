@@ -168,7 +168,10 @@ public:
         return *(head->data);
     }
 
-    
+    const T& back() const{
+        if (back==nullptr) throw std::out_of_range("Invalid operation: empty list");
+        return *(tail->data);
+    }
 
     void print() const {
         Node* current = head;
