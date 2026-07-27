@@ -41,3 +41,17 @@ target_link_libraries(test_dynamic_array PRIVATE
 include(GoogleTest)
 
 gtest_discover_tests(test_dynamic_array)
+
+add_executable(test_singly_linked_list
+    tests/test_singly_linked_list.cpp
+)
+
+target_include_directories(test_singly_linked_list PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+target_link_libraries(test_singly_linked_list PRIVATE
+    GTest::gtest_main
+)
+
+gtest_discover_tests(test_singly_linked_list)

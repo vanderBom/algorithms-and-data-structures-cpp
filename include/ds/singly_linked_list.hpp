@@ -208,8 +208,6 @@ public:
     }
 
     void clear() {
-
-        if (listSize==0) throw std::out_of_range("Invalid operation: empty list");
         Node* current = head;
 
         while (current != nullptr){
@@ -218,7 +216,7 @@ public:
             delete current;
             current = nextNode;
         }
-        head =nullptr;
+        head = nullptr;
         tail = nullptr;
         listSize = 0;
     }
