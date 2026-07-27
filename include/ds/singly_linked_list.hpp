@@ -37,6 +37,20 @@ public:
             current=current->next;
         }
     }
+    SinglyLinkedList& operator=(const SinglyLinkedList& other){
+        if (this == &other){
+            return *this;
+        }
+
+        clear();
+
+        Node* current = other.head;
+        while (current != nullptr){
+            push_back(*(current->data));
+            current=current->next;
+        }
+        return *this;
+    }
     ~SinglyLinkedList(){
         Node* current=head;
         Node* nextNode;
