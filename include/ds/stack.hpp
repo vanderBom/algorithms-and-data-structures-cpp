@@ -14,5 +14,10 @@ class Stack {
         void push(const T& value){
             data.push_back(value);
         }
+        void pop(){
+            if (data.size() == 0) throw std::out_of_range("Stack is empty");
+            else data.pop_back();
+        }
         
-}
+        
+};
