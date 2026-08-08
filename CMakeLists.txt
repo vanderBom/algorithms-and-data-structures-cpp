@@ -55,3 +55,17 @@ target_link_libraries(test_singly_linked_list PRIVATE
 )
 
 gtest_discover_tests(test_singly_linked_list)
+
+add_executable(test_stack
+    tests/test_stack.cpp
+)
+
+target_include_directories(test_stack PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+target_link_libraries(test_stack PRIVATE
+    GTest::gtest_main
+)
+
+gtest_discover_tests(test_stack)
