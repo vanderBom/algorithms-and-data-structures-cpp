@@ -25,7 +25,7 @@ class Stack {
         unsigned int size() const{
             return data.size();
         }
-        bool empty(){
+        bool empty const(){
             if (data.size() == 0) return true;
             else return false;
         }
