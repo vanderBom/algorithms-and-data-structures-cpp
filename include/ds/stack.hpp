@@ -10,4 +10,9 @@ class Stack {
         DynamicArray<T> data;
     public:
         Stack() = default;
+        
+        void push(const T& value){
+            data.push_back(value);
+        }
+        
 }
