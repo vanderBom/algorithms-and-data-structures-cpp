@@ -18,6 +18,10 @@ class Stack {
             if (data.size() == 0) throw std::out_of_range("Stack is empty");
             else data.pop_back();
         }
+        T top() const{
+            if (data.size() == 0) throw std::out_of_range("Stack is empty");
+            else return data.at(data.size()-1);
+        }
         
         
 };
