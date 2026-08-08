@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "dynamic_array.hpp"
 
 template <typename T>
 class Stack {
