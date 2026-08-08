@@ -29,5 +29,7 @@ class Stack {
             if (data.size() == 0) return true;
             else return false;
         }
-        
+        void clear(){
+            data.clear();
+        }
 };
