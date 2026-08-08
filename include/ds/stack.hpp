@@ -9,5 +9,5 @@ class Stack {
     private:
         DynamicArray<T> data;
     public:
-        
+        Stack() = default;
 }
