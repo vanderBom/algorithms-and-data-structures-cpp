@@ -2,11 +2,12 @@
 
 #include <iostream>
 #include <stdexcept>
+#include "singly_linked_list.hpp"
 
 template <typename T>
 class Queue {
     private: //Atributes for queue
-
+        SinglyLinkedList<T> data;
     public: //Methods for queue
     //Todo: Implement constructor and destructor
 
