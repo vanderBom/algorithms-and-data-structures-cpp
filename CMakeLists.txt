@@ -69,3 +69,17 @@ target_link_libraries(test_stack PRIVATE
 )
 
 gtest_discover_tests(test_stack)
+
+add_executable(test_queue
+    tests/test_queue.cpp
+)
+
+target_include_directories(test_queue PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+target_link_libraries(test_queue PRIVATE
+    GTest::gtest_main
+)
+
+gtest_discover_tests(test_queue)
