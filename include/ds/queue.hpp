@@ -23,6 +23,10 @@ class Queue {
         }
 
     //Todo: Implement front method
+        void front() const{
+            if (data.size() == 0) throw std::out_of_range("Queue is empty");
+            else data.front();
+        }
 
     //Todo: Implement back method
 
