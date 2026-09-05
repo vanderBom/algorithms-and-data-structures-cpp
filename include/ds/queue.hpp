@@ -12,11 +12,15 @@ class Queue {
         Queue() = default;
 
         ~Queue() = default;
-        
+
         void push(const T& value){
             data.push_back(value);
         }
-    //Todo: Implement pop method
+
+        void pop(){
+            if (data.size() == 0) throw std::out_of_range("Queue is empty");
+            else data.pop_front();
+        }
 
     //Todo: Implement front method
 
