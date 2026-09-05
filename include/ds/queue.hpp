@@ -32,7 +32,9 @@ class Queue {
             else data.back();
         }
 
-    //Todo: Implement size method
+        void size() const{
+            return data.size();
+        }
 
     //Todo: Implement empty method
 
