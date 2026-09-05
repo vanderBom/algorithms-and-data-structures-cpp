@@ -40,5 +40,7 @@ class Queue {
             return data.empty();
         }
 
-    //Todo: Implement clear method
+        void clear(){
+            data.clear();
+        }
 }
