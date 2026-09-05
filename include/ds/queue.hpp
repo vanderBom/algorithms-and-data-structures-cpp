@@ -22,17 +22,17 @@ class Queue {
             else data.pop_front();
         }
 
-        void front() const{
+        T front() const{
             if (data.size() == 0) throw std::out_of_range("Queue is empty");
-            else data.front();
+            else return data.front();
         }
 
-        void back() const{
+        T back() const{
             if (data.size() == 0) throw std::out_of_range("Queue is empty");
-            else data.back();
+            else return data.back();
         }
 
-        void size() const{
+        unsigned int size() const{
             return data.size();
         }
 
