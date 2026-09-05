@@ -9,12 +9,13 @@ class Queue {
     private: //Atributes for queue
         SinglyLinkedList<T> data;
     public: //Methods for queue
-    //Todo: Implement constructor and destructor
+        Queue() = default;
 
-    //Todo: Implement tree of five rule
-
-    //Todo: Implement push method
-
+        ~Queue() = default;
+        
+        void push(const T& value){
+            data.push_back(value);
+        }
     //Todo: Implement pop method
 
     //Todo: Implement front method
