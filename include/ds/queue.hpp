@@ -36,7 +36,9 @@ class Queue {
             return data.size();
         }
 
-    //Todo: Implement empty method
+        bool empty() const{
+            return data.empty();
+        }
 
     //Todo: Implement clear method
 }
