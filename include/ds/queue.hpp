@@ -27,7 +27,10 @@ class Queue {
             else data.front();
         }
 
-    //Todo: Implement back method
+        void back() const{
+            if (data.size() == 0) throw std::out_of_range("Queue is empty");
+            else data.back();
+        }
 
     //Todo: Implement size method
 
